@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import List from "./List";
 import { connect } from "react-redux";
+import { createTodo } from "./redux/actions/actions";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       term: "",
-      items: [],
     };
   }
 
@@ -16,10 +16,15 @@ class App extends Component {
   };
 
   onSubmit = (event) => {
+    console.log(event);
     event.preventDefault();
+    const item = {
+      title: this.state.term,
+      id: Date.now(),
+    };
+    this.props.createTodo(item);
     this.setState({
       term: "",
-      items: [...this.state.items, this.state.term],
     });
   };
 
@@ -67,9 +72,18 @@ class App extends Component {
             Submit
           </button>
         </form>
-        <List items={this.state.items} />
+        <List />
       </div>
     );
   }
 }
-export default App;
+
+function mapDispatchToProps(dispatch) {
+  return {
+    createTodo: (item) => {
+      dispatch(createTodo(item));
+    },
+  };
+}
+
+export default connect(null, mapDispatchToProps)(App);
