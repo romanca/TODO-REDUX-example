@@ -6,7 +6,7 @@ export const createTodo = (item) => {
     payload: {
       ...item,
       id: Date.now(),
-      completed: true,
+      completed: false,
     },
   };
 };
@@ -17,7 +17,11 @@ export const removeTodo = (id) => {
     payload: id,
   };
 };
-export const toggleTodo = (id) => ({
-  type: TOGGLE_TODO,
-  payload: id,
-});
+
+export function toggleTodo(id) {
+  const action = {
+    type: TOGGLE_TODO,
+    payload: id,
+  };
+  return action;
+}

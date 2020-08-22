@@ -6,19 +6,19 @@ const initState = {
       title: "Something",
       id: "asdsfsf1",
       label: "some label",
-      completed: true,
+      completed: false,
     },
     {
       title: "Thing",
       id: "as",
       label: "some label",
-      completed: true,
+      completed: false,
     },
     {
       title: "Some",
       id: "fsf1",
       label: "some label",
-      completed: true,
+      completed: false,
     },
   ],
 };
@@ -39,7 +39,9 @@ export default (state = initState, action) => {
       return {
         ...state,
         items: state.items.map((item) =>
-          item.id === action.id ? { ...item, completed: !item.completed } : item
+          item.id === action.payload
+            ? { ...item, completed: !item.completed }
+            : item
         ),
       };
     default:

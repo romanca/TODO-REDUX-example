@@ -3,18 +3,21 @@ import Todo from "./Todo";
 import { connect } from "react-redux";
 import { removeTodo, toggleTodo } from "./redux/actions/actions";
 
-const List = ({ items, onTodoRemoved, onToggleTodo }) => (
-  <div>
-    {items.map((item) => (
-      <Todo
-        key={item.id}
-        item={item}
-        onTodoRemoved={onTodoRemoved}
-        onToggleTodo={onToggleTodo}
-      />
-    ))}
-  </div>
-);
+const List = ({ items, onTodoRemoved, onToggleTodo, openEditForm }) => {
+  return (
+    <div>
+      {items.map((item) => (
+        <Todo
+          key={item.id}
+          item={item}
+          onTodoRemoved={onTodoRemoved}
+          onToggleTodo={onToggleTodo}
+          openEditForm={openEditForm}
+        />
+      ))}
+    </div>
+  );
+};
 
 function mapStateToProps(state) {
   return {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import List from "./List";
 import { connect } from "react-redux";
-import { createTodo, toggleTodo } from "./redux/actions/actions";
+import { createTodo } from "./redux/actions/actions";
 
 class App extends Component {
   constructor(props) {
@@ -10,6 +10,11 @@ class App extends Component {
       term: "",
     };
   }
+  openEditForm = () => {
+    this.setState((state) => ({
+      editFormOpen: !state.editFormOpen,
+    }));
+  };
 
   onChange = (event) => {
     this.setState({ term: event.target.value });
@@ -88,7 +93,7 @@ class App extends Component {
               Submit
             </button>
           </form>
-          <List />
+          <List openEditForm={this.openEditForm} />
         </div>
       </div>
     );

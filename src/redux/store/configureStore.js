@@ -3,10 +3,9 @@ import combineReducers from "../reducers/index.js";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-export default function configureStore(initialState) {
+export default function configureStore() {
   return createStore(
     combineReducers,
-    initialState,
     composeWithDevTools(applyMiddleware(thunk))
   );
 }
