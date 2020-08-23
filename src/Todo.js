@@ -1,26 +1,34 @@
 import React, { useState } from "react";
 
-const Todo = ({ item, onTodoRemoved, onToggleTodo, openEditForm }) => {
-  const [editing, setEditing] = useState(true);
+const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
+  const [editing, setEditing] = useState(false);
+  const [value, setValue] = useState(item.title);
 
   const handleTodoRemove = () => {
     onTodoRemoved(item.id);
   };
+
   const handleTodoDone = () => {
     onToggleTodo(item.id);
   };
-  // const handleOpenEdit = () => {
-  //   setEditing(true);
-  // };
-  function handleToggleEdit() {
+
+  const handleToggleEdit = () => {
     setEditing(!editing);
-  }
+  };
+
+  const handleEditItem = () => {
+    onEditItem({
+      ...item,
+      title: value,
+    });
+    handleToggleEdit();
+  };
 
   const textDecoration = item.completed ? "line-through" : "none";
   const backgroundColor = item.completed ? "red" : "lightskyblue";
   return (
     <div>
-      {editing ? (
+      {!editing ? (
         <div
           style={{
             border: "1.5px solid black",
@@ -114,7 +122,10 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, openEditForm }) => {
                 marginLeft: -5,
               }}
               type='text'
-              value={item.title}
+              value={value}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
             />
             <div style={{ marginTop: -26 }}>
               <button
@@ -139,6 +150,7 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, openEditForm }) => {
                 x
               </button>
               <button
+                onClick={handleEditItem}
                 style={{
                   border: "2px solid black",
                   marginTop: 1,

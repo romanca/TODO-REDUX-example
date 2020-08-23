@@ -1,9 +1,15 @@
 import React from "react";
 import Todo from "./Todo";
 import { connect } from "react-redux";
-import { removeTodo, toggleTodo } from "./redux/actions/actions";
+import { removeTodo, toggleTodo, editTodo } from "./redux/actions/actions";
 
-const List = ({ items, onTodoRemoved, onToggleTodo, openEditForm }) => {
+const List = ({
+  items,
+  onTodoRemoved,
+  onToggleTodo,
+
+  onEditItem,
+}) => {
   return (
     <div>
       {items.map((item) => (
@@ -12,7 +18,7 @@ const List = ({ items, onTodoRemoved, onToggleTodo, openEditForm }) => {
           item={item}
           onTodoRemoved={onTodoRemoved}
           onToggleTodo={onToggleTodo}
-          openEditForm={openEditForm}
+          onEditItem={onEditItem}
         />
       ))}
     </div>
@@ -31,6 +37,9 @@ function mapDispatchToProps(dispatch) {
     },
     onToggleTodo: (id) => {
       dispatch(toggleTodo(id));
+    },
+    onEditItem: (item) => {
+      dispatch(editTodo(item));
     },
   };
 }

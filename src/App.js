@@ -10,11 +10,6 @@ class App extends Component {
       term: "",
     };
   }
-  openEditForm = () => {
-    this.setState((state) => ({
-      editFormOpen: !state.editFormOpen,
-    }));
-  };
 
   onChange = (event) => {
     this.setState({ term: event.target.value });
@@ -93,7 +88,7 @@ class App extends Component {
               Submit
             </button>
           </form>
-          <List openEditForm={this.openEditForm} />
+          <List />
         </div>
       </div>
     );

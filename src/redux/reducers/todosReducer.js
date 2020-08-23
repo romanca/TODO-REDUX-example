@@ -1,4 +1,9 @@
-import { ADD_TODO, DELETE_TODO, TOGGLE_TODO } from "../actions/actionTypes";
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  TOGGLE_TODO,
+  EDIT_TODO,
+} from "../actions/actionTypes";
 
 const initState = {
   items: [
@@ -42,6 +47,13 @@ export default (state = initState, action) => {
           item.id === action.payload
             ? { ...item, completed: !item.completed }
             : item
+        ),
+      };
+    case EDIT_TODO:
+      return {
+        ...state,
+        items: state.items.map((i) =>
+          i.id === action.payload.id ? action.payload : i
         ),
       };
     default:
