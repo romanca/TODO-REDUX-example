@@ -3,12 +3,14 @@ import {
   DELETE_TODO,
   TOGGLE_TODO,
   EDIT_TODO,
+  COMPLETED_TODOS,
 } from "../actions/actionTypes";
 
 const initState = {
   items: [
     {
-      title: "Something",
+      title:
+        "Somethingnlvnfjnvjfvlnôwekvpwoejvpweovmwwdlômcdôl,xc dwôlcmempewofkwelcmwdôlcmeôqofckeôlcemôl",
       id: "asdsfsf1",
       label: "some label",
       completed: false,
@@ -56,6 +58,12 @@ export default (state = initState, action) => {
           i.id === action.payload.id ? action.payload : i
         ),
       };
+    case COMPLETED_TODOS:
+      return {
+        ...state,
+        items: state.items.filter((i) => i.completed),
+      };
+
     default:
       return state;
   }

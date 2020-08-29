@@ -1,4 +1,10 @@
-import { ADD_TODO, DELETE_TODO, TOGGLE_TODO, EDIT_TODO } from "./actionTypes";
+import {
+  ADD_TODO,
+  DELETE_TODO,
+  TOGGLE_TODO,
+  EDIT_TODO,
+  COMPLETED_TODOS,
+} from "./actionTypes";
 
 export const createTodo = (item) => {
   return {
@@ -25,9 +31,15 @@ export function toggleTodo(id) {
   };
   return action;
 }
-export function editTodo(payload){
-  return{
-    type:  EDIT_TODO,
-    payload 
-  }
+export function editTodo(payload) {
+  return {
+    type: EDIT_TODO,
+    payload,
+  };
+}
+export function completedTodos(filter) {
+  return {
+    type: COMPLETED_TODOS,
+    filter,
+  };
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
   const [editing, setEditing] = useState(false);
@@ -26,6 +27,7 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
 
   const textDecoration = item.completed ? "line-through" : "none";
   const backgroundColor = item.completed ? "red" : "lightskyblue";
+
   return (
     <div>
       {!editing ? (
@@ -44,7 +46,16 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
             boxShadow: " 5px 4px 8px black",
             textDecoration,
           }}>
-          <div onClick={handleToggleEdit}>{item.title}</div>
+          <div
+            onClick={handleToggleEdit}
+            style={{
+              width: 400,
+              overflow: " hidden",
+              textOverflow: " ellipsis",
+              whiteSpace: "nowrap",
+            }}>
+            {item.title}
+          </div>
           <div style={{ marginTop: -23 }}>
             <button
               onClick={handleTodoRemove}
@@ -72,14 +83,12 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
               style={{
                 border: "2px solid black",
                 marginTop: 1,
-                border: "none",
                 outline: "none",
                 backgroundColor: "green",
                 float: "right",
                 fontSize: 20,
                 fontWeight: 300,
                 cursor: "pointer",
-                textAlign: "center",
                 textDecoration: " none",
                 display: " inline-block",
                 marginRight: 4,
@@ -87,7 +96,7 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
                 width: 27,
                 height: 27,
               }}>
-              <i className='fa fa-check'></i>
+              <i className='fa fa-check' style={{ marginLeft: -4 }}></i>
             </button>
           </div>
         </div>
@@ -154,7 +163,6 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
                 style={{
                   border: "2px solid black",
                   marginTop: 1,
-                  border: "none",
                   outline: "none",
                   backgroundColor: "green",
                   float: "right",
