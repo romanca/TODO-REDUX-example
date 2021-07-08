@@ -45,7 +45,9 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
             paddingLeft: 10,
             boxShadow: " 5px 4px 8px black",
             textDecoration,
-          }}>
+            cursor: "pointer",
+          }}
+        >
           <div
             onClick={handleToggleEdit}
             style={{
@@ -53,7 +55,8 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
               overflow: " hidden",
               textOverflow: " ellipsis",
               whiteSpace: "nowrap",
-            }}>
+            }}
+          >
             {item.title}
           </div>
           <div style={{ marginTop: -23 }}>
@@ -75,7 +78,8 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
                 height: 27,
                 marginTop: 1,
                 marginRight: 6,
-              }}>
+              }}
+            >
               x
             </button>
             <button
@@ -95,8 +99,9 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
                 borderRadius: "50%",
                 width: 27,
                 height: 27,
-              }}>
-              <i className='fa fa-check' style={{ marginLeft: -4 }}></i>
+              }}
+            >
+              <i className="fa fa-check" style={{ marginLeft: -4 }}></i>
             </button>
           </div>
         </div>
@@ -116,7 +121,8 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
               paddingLeft: 10,
               boxShadow: " 5px 4px 8px black",
               textDecoration,
-            }}>
+            }}
+          >
             <input
               style={{
                 width: 400,
@@ -130,7 +136,7 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
                 paddingLeft: 5,
                 marginLeft: -5,
               }}
-              type='text'
+              type="text"
               value={value}
               onChange={(e) => {
                 setValue(e.target.value);
@@ -155,7 +161,8 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
                   height: 27,
                   marginTop: 1,
                   marginRight: 6,
-                }}>
+                }}
+              >
                 x
               </button>
               <button
@@ -176,8 +183,9 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
                   borderRadius: "50%",
                   width: 27,
                   height: 27,
-                }}>
-                <i className='fa fa-check'></i>
+                }}
+              >
+                <i className="fa fa-check"></i>
               </button>
             </div>
           </div>

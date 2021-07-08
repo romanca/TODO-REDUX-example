@@ -46,7 +46,8 @@ class App extends Component {
             backgroundColor: "tomato",
             margin: "auto",
             boxShadow: "5px 3px black",
-          }}>
+          }}
+        >
           <div
             style={{
               border: "2px solid black",
@@ -55,15 +56,17 @@ class App extends Component {
               borderRadius: 15,
               margin: "auto",
               marginTop: 7,
-            }}>
+            }}
+          >
             <form
               style={{
                 textAlign: "center",
-              }}>
+              }}
+            >
               <input
                 value={this.state.term}
                 onChange={this.onChange}
-                placeholder='Add a task...'
+                placeholder="Add a task..."
                 style={{
                   border: "1.5px solid black",
                   width: 200,
@@ -91,14 +94,15 @@ class App extends Component {
                   fontWeight: 200,
                   outline: "none",
                   boxShadow: " 5px 2px 8px black",
-                }}>
+                  cursor: "pointer",
+                }}
+              >
                 Submit
               </button>
             </form>
             <List />
           </div>
         </div>
-        <SideBar />
       </div>
     );
   }
