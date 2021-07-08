@@ -26,26 +26,26 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
   };
 
   const textDecoration = item.completed ? "line-through" : "none";
-  const backgroundColor = item.completed ? "red" : "lightskyblue";
 
   return (
     <div>
       {!editing ? (
         <div
           style={{
-            border: "1.5px solid black",
+            border: "1.5px solid grey",
             width: 500,
             height: 30,
             borderRadius: 5,
-            backgroundColor,
             margin: "auto",
             marginTop: 5,
             fontWeight: 500,
             fontSize: 20,
             paddingLeft: 10,
-            boxShadow: " 5px 4px 8px black",
+            boxShadow: " 5px 4px 8px grey",
             textDecoration,
             cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
           }}
         >
           <div
@@ -55,53 +55,60 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
               overflow: " hidden",
               textOverflow: " ellipsis",
               whiteSpace: "nowrap",
+              color: "grey",
             }}
           >
             {item.title}
           </div>
-          <div style={{ marginTop: -23 }}>
+          <div style={{ marginLeft: 23 }}>
             <button
               onClick={handleTodoRemove}
               style={{
-                border: "2px solid black",
+                border: "1px solid tomato",
                 outline: "none",
-                backgroundColor: "magenta",
                 float: "right",
                 fontSize: 20,
                 fontWeight: 300,
                 cursor: "pointer",
                 textAlign: "center",
                 textDecoration: " none",
-                display: " inline-block",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 borderRadius: "50%",
                 width: 27,
                 height: 27,
                 marginTop: 1,
                 marginRight: 6,
+                color: "tomato",
+                background: "transparent",
               }}
             >
-              x
+              <i className="fa fa-trash"></i>
             </button>
             <button
               onClick={handleTodoDone}
               style={{
-                border: "2px solid black",
+                border: "1px solid lightgreen",
                 marginTop: 1,
                 outline: "none",
-                backgroundColor: "green",
                 float: "right",
                 fontSize: 20,
                 fontWeight: 300,
                 cursor: "pointer",
                 textDecoration: " none",
-                display: " inline-block",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 marginRight: 4,
                 borderRadius: "50%",
                 width: 27,
                 height: 27,
+                background: "transparent",
+                color: "lightgreen",
               }}
             >
-              <i className="fa fa-check" style={{ marginLeft: -4 }}></i>
+              <i className="fa fa-check"></i>
             </button>
           </div>
         </div>
@@ -109,32 +116,33 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
         <div>
           <div
             style={{
-              border: "1.5px solid black",
+              border: "1.5px solid grey",
               width: 500,
               height: 30,
               borderRadius: 5,
-              backgroundColor,
               margin: "auto",
               marginTop: 5,
-              fontWeight: 500,
               fontSize: 20,
               paddingLeft: 10,
-              boxShadow: " 5px 4px 8px black",
-              textDecoration,
+              boxShadow: " 5px 4px 8px grey",
+              color: "grey",
+              display: "flex",
+              alignItems: "center",
             }}
           >
             <input
               style={{
-                width: 400,
+                width: 390,
                 height: 18,
                 borderRadius: 5,
                 outline: "none",
-                backgroundColor: "teal",
                 marginTop: 2,
                 fontWeight: 500,
                 fontSize: 20,
                 paddingLeft: 5,
                 marginLeft: -5,
+                border: "1px solid grey",
+                color: "grey",
               }}
               type="text"
               value={value}
@@ -142,50 +150,55 @@ const Todo = ({ item, onTodoRemoved, onToggleTodo, onEditItem }) => {
                 setValue(e.target.value);
               }}
             />
-            <div style={{ marginTop: -26 }}>
+            <div style={{ marginLeft: 30 }}>
               <button
                 onClick={handleToggleEdit}
                 style={{
-                  border: "2px solid black",
+                  border: "1px solid tomato",
                   outline: "none",
-                  backgroundColor: "magenta",
+                  backgroundColor: "transparent",
                   float: "right",
                   fontSize: 20,
-                  fontWeight: 300,
+                  fontWeight: 100,
                   cursor: "pointer",
                   textAlign: "center",
                   textDecoration: " none",
-                  display: " inline-block",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   borderRadius: "50%",
                   width: 27,
                   height: 27,
                   marginTop: 1,
                   marginRight: 6,
+                  color: "red",
                 }}
               >
-                x
+                C
               </button>
               <button
                 onClick={handleEditItem}
                 style={{
-                  border: "2px solid black",
+                  border: "1px solid lightgreen",
                   marginTop: 1,
                   outline: "none",
-                  backgroundColor: "green",
+                  backgroundColor: "transparent",
                   float: "right",
                   fontSize: 20,
-                  fontWeight: 300,
                   cursor: "pointer",
                   textAlign: "center",
                   textDecoration: " none",
-                  display: " inline-block",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   marginRight: 4,
                   borderRadius: "50%",
                   width: 27,
                   height: 27,
+                  color: "lightgreen",
                 }}
               >
-                <i className="fa fa-check"></i>
+                <i className="fa fa-check" />
               </button>
             </div>
           </div>
