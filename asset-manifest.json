@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/todo-redux-tutorial/static/css/main.b6a5af43.chunk.css",
+    "main.js": "/todo-redux-tutorial/static/js/main.2505a695.chunk.js",
+    "main.js.map": "/todo-redux-tutorial/static/js/main.2505a695.chunk.js.map",
+    "runtime-main.js": "/todo-redux-tutorial/static/js/runtime-main.ee603032.js",
+    "runtime-main.js.map": "/todo-redux-tutorial/static/js/runtime-main.ee603032.js.map",
+    "static/js/2.5bc5f587.chunk.js": "/todo-redux-tutorial/static/js/2.5bc5f587.chunk.js",
+    "static/js/2.5bc5f587.chunk.js.map": "/todo-redux-tutorial/static/js/2.5bc5f587.chunk.js.map",
+    "index.html": "/todo-redux-tutorial/index.html",
+    "precache-manifest.d6abdfc2ff463e4e7b990c7f2f597631.js": "/todo-redux-tutorial/precache-manifest.d6abdfc2ff463e4e7b990c7f2f597631.js",
+    "service-worker.js": "/todo-redux-tutorial/service-worker.js",
+    "static/css/main.b6a5af43.chunk.css.map": "/todo-redux-tutorial/static/css/main.b6a5af43.chunk.css.map",
+    "static/js/2.5bc5f587.chunk.js.LICENSE.txt": "/todo-redux-tutorial/static/js/2.5bc5f587.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ee603032.js",
+    "static/js/2.5bc5f587.chunk.js",
+    "static/css/main.b6a5af43.chunk.css",
+    "static/js/main.2505a695.chunk.js"
+  ]
+}
