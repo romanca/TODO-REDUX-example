@@ -1,5 +1,5 @@
 {
-  "homepage": "http://romanca.github.io/todo-redux-tutorial",
+  "homepage": "http://romanca.github.io/TODO-REDUX-example",
   "name": "todo-tutorial",
   "version": "0.1.0",
   "private": true,
@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "redux-devtools": "^3.6.1"
+    "redux-devtools": "^3.6.1",
+    "gh-pages": "^3.2.3"
   }
 }
