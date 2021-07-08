@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import List from "./List";
-import SideBar from "./Components/SideBar";
 import { connect } from "react-redux";
 import { createTodo } from "./redux/actions/actions";
 
