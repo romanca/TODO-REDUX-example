@@ -1,7 +1,7 @@
 # HomePage
 
 You can find this sample at
-https://romanca.github.io/react-useReducer-example/
+https://romanca.github.io/TODO-REDUX-example/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
